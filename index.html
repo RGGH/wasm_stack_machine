@@ -4,15 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WASM Stack Machine Demo</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light grey background */
+        }
+        button {
+            background-color: #28a745; /* Green button */
+            color: white;
+        }
+        button:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+        h1 {
+            color: #343a40; /* Darker grey for the heading */
+        }
+        #stack-top {
+            font-weight: bold; /* Make the stack top display bold */
+        }
+    </style>
 </head>
-<body>
-    <h1>WASM Stack Machine Demo</h1>
-    <button id="add">Add</button>
-    <button id="sub">Subtract</button>
-    <button id="push5">Push 5</button>
-    <button id="push3">Push 3</button>
-    <button id="pop">Pop</button>
-    <p>Stack Top: <span id="stack-top">None</span></p>
+<body class="container text-center">
+    <h1 class="my-4">WASM Stack Machine Demo</h1>
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button id="add" class="btn">Add</button>
+        <button id="sub" class="btn">Subtract</button>
+        <button id="push5" class="btn">Push 5</button>
+        <button id="push3" class="btn">Push 3</button>
+        <button id="pop" class="btn">Pop</button>
+    </div>
+    <p class="mt-4">Stack Top: <span id="stack-top">None</span></p>
 
     <script type="module">
         import init, { StackMachine } from "./pkg/wasm_stack_machine.js";
@@ -63,4 +85,5 @@
     </script>
 </body>
 </html>
+
 
