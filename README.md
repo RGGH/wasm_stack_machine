@@ -2,3 +2,5 @@
 # Stack Machine - Rust / WASM example
 ---
 
+ 
+``` import init, { StackMachine } from "./pkg/wasm_stack_machine.js"; ```
