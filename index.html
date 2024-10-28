@@ -37,7 +37,8 @@
     <p class="mt-4">Stack Top: <span id="stack-top">None</span></p>
 
     <script type="module">
-        import init, { StackMachine } from "./pkg/wasm_stack_machine.js";
+
+        import init, { StackMachine } from "https://RGGH.github.io/wasm_stack_machine/pkg/wasm_stack_machine.js";
 
         async function run() {
             await init(); // Load and initialize the WebAssembly module
