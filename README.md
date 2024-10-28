@@ -1,1 +1,4 @@
-# Stack Machine made in Rust for WASM
+# Stack Machine - Rust / WASM example
+
+---
+
