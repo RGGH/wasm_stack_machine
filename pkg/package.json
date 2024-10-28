@@ -1,0 +1,15 @@
+{
+  "name": "wasm_stack_machine",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "wasm_stack_machine_bg.wasm",
+    "wasm_stack_machine.js",
+    "wasm_stack_machine.d.ts"
+  ],
+  "main": "wasm_stack_machine.js",
+  "types": "wasm_stack_machine.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
