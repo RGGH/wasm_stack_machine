@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WASM Stack Machine Demo</title>
+</head>
+<body>
+    <h1>WASM Stack Machine Demo</h1>
+    <button id="add">Add</button>
+    <button id="sub">Subtract</button>
+    <button id="push5">Push 5</button>
+    <button id="push3">Push 3</button>
+    <button id="pop">Pop</button>
+    <p>Stack Top: <span id="stack-top">None</span></p>
+
+    <script type="module">
+        import init, { StackMachine } from "./pkg/wasm_stack_machine.js";
+
+        async function run() {
+            await init(); // Load and initialize the WebAssembly module
+
+            // Create a new instance of the StackMachine
+            const machine = new StackMachine();
+
+            // Utility function to update the stack top display
+            function updateStackTop() {
+                const topValue = machine.peek();
+                document.getElementById("stack-top").textContent = topValue !== undefined ? topValue : "None";
+            }
+
+            // Set up button event listeners
+            document.getElementById("add").addEventListener("click", () => {
+                machine.add();
+                updateStackTop();
+            });
+
+            document.getElementById("sub").addEventListener("click", () => {
+                machine.sub();
+                updateStackTop();
+            });
+
+            document.getElementById("push5").addEventListener("click", () => {
+                machine.push(5);
+                updateStackTop();
+            });
+
+            document.getElementById("push3").addEventListener("click", () => {
+                machine.push(3);
+                updateStackTop();
+            });
+
+            document.getElementById("pop").addEventListener("click", () => {
+                machine.pop();
+                updateStackTop();
+            });
+
+            // Initialize display
+            updateStackTop();
+        }
+
+        run();
+    </script>
+</body>
+</html>
+
